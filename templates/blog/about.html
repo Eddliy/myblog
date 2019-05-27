@@ -1,0 +1,358 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Eddie - blog</title>
+
+		<!-- css include -->
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/materialize.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/icofont.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/owl.theme.default.min.css' %}">
+
+		<!-- my css include -->
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom-menu.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/responsive.css' %}">
+
+        <!-- my css highlight style -->
+        <link rel="stylesheet" href="{% static 'blog/css/highlights/vim.css' %}">
+
+	</head>
+
+
+
+
+<body>
+
+    <div class="thetop"></div>
+    <!-- for back to top -->
+
+    <div class='backToTop'>
+        <a href="#" class='scroll'>
+            <span>T</span>
+            <span>O</span>
+            <span>P</span>
+            <span class="go-up">
+                <i class="icofont icofont-long-arrow-up"></i>
+            </span>
+        </a>
+    </div>
+    <!-- backToTop -->
+
+
+
+
+   	  <!-- ==================== header-section Start ==================== -->
+		<header id="header-section" class="header-section w100dt navbar-fixed">
+
+			<nav class="nav-extended main-nav">
+				<div class="container">
+					<div class="row">
+						<div class="nav-wrapper w100dt">
+
+							<div class="logo left">
+								<a href="{% url 'blog:index' %}" class="brand-logo">
+									<img src="{% static 'blog/img/mylogo.png' %}" alt="brand-logo">
+								</a>
+							</div>
+							<!-- logo -->
+
+							<div>
+								<a href="#" data-activates="mobile-demo" class="button-collapse">
+									<i class="icofont icofont-navigation-menu"></i>
+								</a>
+
+                                <ul id="nav-mobile" class="main-menu center-align hide-on-med-and-down">
+									<li><a href="{% url 'blog:index' %}" style="font-size:18px;">HOME</a></li>
+									<li><a href="{% url 'blog:myblogs' %}" style="font-size:18px;">MY BOLGS</a></li>
+									<li><a href="{% url 'blog:contact' %}" style="font-size:18px;">CONTACT</a></li>
+									<li><a href="{% url 'blog:about' %}" style="font-size:18px;">ABOUT ME</a></li>
+								</ul>
+
+								<!-- /.main-menu -->
+
+								<!-- ******************** sidebar-menu ******************** -->
+								<ul class="side-nav" id="mobile-demo">
+									<li class="snavlogo center-align"><img src="{% static 'blog/img/mylogo.png' %}" alt="logo"></li>
+									<li><a href="{% url 'blog:index' %}" style="font-size:18px;">HOME</a></li>
+									<li><a href="{% url 'blog:myblogs' %}" style="font-size:18px;">MY BOLGS</a></li>
+									<li><a href="{% url 'blog:contact' %}" style="font-size:18px;">CONTACT</a></li>
+									<li><a href="{% url 'blog:about' %}" style="font-size:18px;">ABOUT ME</a></li>
+								</ul>
+							</div>
+							<!-- main-menu -->
+
+							<a href="#" class="search-trigger right">
+								<i class="icofont icofont-search"></i>
+							</a>
+							<!-- search -->
+							<div id="myNav" class="overlay">
+								<a href="javascript:void(0)" class="closebtn">&times;</a>
+								<div class="overlay-content">
+									<form method="get" action="{% url 'blog:search' %}">
+										<input type="text" name="q" placeholder="Search..." required>
+										<br>
+										<button class="waves-effect waves-light" type="submit">Search</button>
+									</form>
+								</div>
+							</div>
+
+						</div>
+						<!-- /.nav-wrapper -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</nav>
+
+		</header>
+		<!-- /#header-section -->
+		<!-- ==================== header-section End ==================== -->
+
+
+    <!-- ==================== header-section Start ====================-->
+    <section id="breadcrumb-section" class="breadcrumb-section w100dt mb-30">
+        <div class="container">
+
+            <nav class="breadcrumb-nav w100dt">
+                <div class="page-name hide-on-small-only left">
+                    <h4>SINGLE BLOG</h4>
+                </div>
+                <div class="nav-wrapper right">
+                    <a href="{% url 'blog:index' %}" class="breadcrumb">Home</a>
+                    <a href="{% url 'blog:about' %}" class="breadcrumb active">About Me</a>
+                </div>
+                <!-- /.nav-wrapper -->
+            </nav>
+            <!-- /.breadcrumb-nav -->
+
+        </div>
+        <!-- container -->
+    </section>
+    <!-- /.breadcrumb-section -->
+    <!-- ==================== header-section End ====================-->
+
+
+
+
+    <section id="blog-section" class="blog-section w100dt mb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m8 l8">
+                            <div class="sidebar-testimonial mb-30">
+                                <div class="sidebar-title center-align">
+                                    <h2>Hi Its Me!</h2>
+                                </div>
+                                <!-- /.sidebar-title -->
+
+                                <div class="carousel carousel-slider center" data-indicators="true" style="height: 630px;">
+                                    <div class="carousel-item">
+                                        <div class="item-img">
+                                            <span>R</span>
+                                        </div>
+                                        <h2>Rakibul Hassan</h2>
+                                        <small>Web Design & Development</small>
+                                        <p>
+                                            Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                                        </p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="item-img">
+                                            <span>O</span>
+                                        </div>
+                                        <h2>Rakibul Hassan</h2>
+                                        <small>Web Design & Development</small>
+                                        <p>
+                                            Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                                        </p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="item-img">
+                                            <span>K</span>
+                                        </div>
+                                        <h2>Rakibul Hassan</h2>
+                                        <small>Web Design & Development</small>
+                                        <p>
+                                            Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                                        </p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="item-img">
+                                            <span>I</span>
+                                        </div>
+                                        <h2>Rakibul Hassan</h2>
+                                        <small>Web Design & Development</small>
+                                        <p>
+                                            Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                                        </p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="item-img">
+                                            <span>B</span>
+                                        </div>
+                                        <h2>Rakibul Hassan</h2>
+                                        <small>Web Design & Development</small>
+                                        <p>
+                                            Sedut perspiciatis unde omnis iste natus errorsit voluptatem accusantium doloremque.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.sidebar-testimonial -->
+                        </div>
+
+
+                        <div class="col s12 m4 l4">
+                                <div class="sidebar-followme w100dt mb-30">
+                                    <div class="sidebar-title center-align">
+                                        <h2>Follow Me</h2>
+                                    </div>
+                                    <!-- /.sidebar-title -->
+
+                                    <ul class="followme-links w100dt">
+                                        <li class="mrb15">
+                                            <a href="#" class="facebook">
+                                                <i class="icofont icofont-social-facebook"></i>
+                                                <small class="Followers white-text">105 Likes</small>
+                                            </a>
+                                        </li>
+                                        <li class="mrb15">
+                                            <a href="#" class="twitter">
+                                                <i class="icofont icofont-social-twitter"></i>
+                                                <small class="Followers white-text">50 Follows</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="google-plus">
+                                                <i class="icofont icofont-social-google-plus"></i>
+                                                <small class="Followers white-text">39 Follows</small>
+                                            </a>
+                                        </li>
+
+                                        <li class="mrb15">
+                                            <a href="#" class="linkedin">
+                                                <i class="icofont icofont-brand-linkedin"></i>
+                                                <small class="Followers white-text">50 Follows</small>
+                                            </a>
+                                        </li>
+                                        <li class="mrb15">
+                                            <a href="#" class="pinterest">
+                                                <i class="icofont icofont-social-pinterest"></i>
+                                                <small class="Followers white-text">50 Follows</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="instagram">
+                                                <i class="icofont icofont-social-instagram"></i>
+                                                <small class="Followers white-text">39 Likes</small>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <!-- /.sidebar-followme -->
+                                <div class="sidebar-subscribe w100dt">
+                                <div class="sidebar-title center-align">
+                                    <h2>Subscribe</h2>
+                                </div>
+                                <!-- /.sidebar-title -->
+
+                                <div class="subscribe">
+                                    <p class="mb-30">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo.
+                                    </p>
+                                    <form action="#">
+                                        <div class="input-field">
+                                            <input id="email" type="email" class="validate">
+                                            <label class="left-align" for="email">Enter email address</label>
+                                        </div>
+                                        <a class="waves-effect waves-light">SUBMIT NOW</a>
+                                    </form>
+                                </div>
+                                <!-- /.subscribe -->
+
+                            </div>
+                                <!-- /.sidebar-subscribe -->
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+
+
+
+    <!-- ==================== instag leftram-section Start ==================== -->
+    <section id="instagram-section" class="instagram-section w100dt">
+
+        <div class="instagram-link w100dt">
+            <a href="#">
+                <span>FIND US ON INSTAGRAM</span>
+                @SUJONMAJIDESIGN
+            </a>
+        </div>
+
+    </section>
+    <!-- /#instag leftram-section -->
+    <!-- ==================== instag leftram-section End ==================== -->
+
+
+
+
+
+    <!-- ==================== footer-section Start ==================== -->
+    <footer id="footer-section" class="footer-section w100dt">
+        <div class="container">
+
+            <div class="footer-logo w100dt center-align mb-30">
+                <a href="#" class="brand-logo">
+                    <img src="img/logo.png" alt="brand-logo">
+                </a>
+            </div>
+            <!-- /.footer-logo -->
+
+            <ul class="footer-social-links w100dt center-align mb-30">
+                <li><a href="#" class="facebook">FACEBOOK</a></li>
+                <li><a href="#" class="twitter">TWITTER</a></li>
+                <li><a href="#" class="google-plus">GOOGLE+</a></li>
+                <li><a href="#" class="linkedin">LINKDIN</a></li>
+                <li><a href="#" class="pinterest">PINTEREST</a></li>
+                <li><a href="#" class="instagram">INSTAGRAM</a></li>
+            </ul>
+
+            <p class="center-align">
+                <i class="icofont icofont-heart-alt l-blue"></i>
+                All Right Reserved, Deasined by
+                <a href="#" class="l-blue">HTMLmate</a>
+            </p>
+
+        </div>
+        <!-- container -->
+    </footer>
+    <!-- /#footer-section -->
+    <!-- ==================== footer-section End ==================== -->
+
+
+
+
+
+
+		<!-- my custom js -->
+		<!--<script type="text/javascript" src="{% static 'blog/js/jquery-3.1.1.min.js' %}"></script>-->
+		<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{% static 'blog/js/materialize.js' %}"></script>
+		<script type="text/javascript" src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+
+		<!-- my custom js -->
+		<script type="text/javascript" src="{% static 'blog/js/custom.js' %}"></script>
+
+		<script type="text/javascript">
+		</script>
+
+
+</body>
+</html>

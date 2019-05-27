@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load blog_tags %}
+
+
+    {% block div_index %}
+		<!-- ==================== blog-slider-section start ==================== -->
+		<section id="blog-slider-section" class="blog-slider-section w100dt mb-50">
+			<div class="container">
+
+				<div class="slider">
+					<ul class="slides">
+						<li class="slider-item">
+							<img src="{% static 'blog/img/travel.jpg' %}" alt="Image">
+							<div class="caption center-align">
+								<a href="#" class="tag l-blue w100dt mb-30">Travel</a>
+								<h1 class="card-title mb-10">
+									Labore Etdolore Magna Aliqua Utero
+								</h1>
+								<p>
+									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+								</p>
+								<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+							</div>
+						</li>
+						<li class="slider-item">
+							<img src="{% static 'blog/img/lifestyle.jpg' %}" alt="Image">
+							<div class="caption left-align">
+								<a href="#" class="tag l-blue w100dt mb-30">Lifestyle</a>
+								<h1 class="card-title mb-10">
+									Labore Etdolore Magna Aliqua Utero
+								</h1>
+								<p>
+									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+								</p>
+								<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+							</div>
+						</li>
+						<li class="slider-item">
+							<img src="{% static 'blog/img/fashion.jpg' %}" alt="Image">
+							<div class="caption right-align">
+								<a href="#" class="tag l-blue w100dt mb-30">Fashion</a>
+								<h1 class="card-title mb-10">
+									Labore Etdolore Magna Aliqua Utero
+								</h1>
+								<p>
+									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+									Sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+								</p>
+								<a href="single-blog.html" class="custom-btn waves-effect waves-light">READ MORE</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<!-- container -->
+		</section>
+		<!-- /#blog-slider-section -->
+		<!-- ==================== blog-slider-section end ==================== -->
+
+
+
+
+
+		<!-- ==================== daily-lifestyle-section Start ==================== -->
+		<section id="daily-lifestyle-section" class="daily-lifestyle-section mb-50">
+			<div class="container">
+
+				<div class="owl-carousel small-carousel owl-theme">
+
+					{% get_categories as category_list %}
+                    {% for category in category_list %}
+                        <div class="item">
+                            <div class="card horizontal">
+                                <div class="card-image">
+                                    <img src="{% static 'blog/img/img1.jpg' %}" alt="Image">
+                                    <span class="effect"></span>
+                                </div>
+                                <!-- /.card-image -->
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <a href="{% url 'blog:category' category.pk %}" class="tag left l-blue mb-10" style="font-size:16px;">{{ category.name }}</a>
+                                        <a href="{% url 'blog:category' category.pk %}" class="sm-name" style="font-size:14px;">{{ category.excerpt }}</a>
+                                    </div>
+                                    <!-- /.card-content -->
+                                    <div class="card-action">
+                                        <p class="hero left">
+                                            BY - <a href="#" class="l-blue">Eddie</a>
+                                        </p>
+                                        <ul class="post-mate right">
+                                            <li>
+<!--                                                <a href="#" class="m-0"><i class="icofont icofont-heart-alt" style="color:red;"></i> </a>-->
+<!--                                                <a href="#" class="m-0"><i> ( 19 ) </i></a>-->
+												<a href="#" class="l-blue"> <i style="color:#EAC100">★</i> <i style="color:#FF5151;"> {{ category.num_posts }} </i> <i style="color:#EAC100">★</i> </a>
+
+
+                                            </li>
+                                        </ul>
+                                        <!-- /.post-mate -->
+                                    </div>
+                                    <!-- /.card-action -->
+                                </div>
+                                <!-- /.card-stacked -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.item -->
+                    {% empty %}
+                     <div style="font-size:16px;" class="comment w100dt mb-30"><center>暂无分类！</center></div>
+                    {% endfor %}
+
+
+				</div>
+				<!-- /.small-carousel -->
+			</div>
+			<!-- container -->
+		</section>
+		<!-- /#daily-lifestyle-section -->
+		<!-- ==================== daily-lifestyle-section End ==================== -->
+    {% endblock div_index %}
+
+
+
+
+    {% block div_post %}
+
+
+                    <div class="col s12 m8 l8">
+
+
+
+						<div class="row">
+
+							{% if error_msg %}
+								<p>{{ error_msg }}</p>
+							{% endif %}
+
+                            {% for post in post_list %}
+
+
+							<div class="col m6 s12 post-{{ post.pk }}">
+
+
+								<div class="blogs mb-30">
+									<div class="card">
+										<div class="card-image">
+											<img src="{% static 'blog/img/selfie.jpg' %}" alt="Image">
+											<a class="btn-floating center-align cmn-bgcolor halfway-fab waves-effect waves-light">
+												<i class="icofont icofont-camera-alt"></i>
+											</a>
+										</div>
+										<!-- /.card-image -->
+										<div class="card-content w100dt">
+											<p>
+												<a href="#" class="tag left w100dt l-blue mb-30">{{ post.category }}</a>
+											</p>
+											<a href="{{ post.get_absolute_url }}" class="card-title">
+												{{ post.title }}
+											</a>
+											<p class="mb-30" style="height:auto;word-wrap:break-word;word-break:break-all;overflow:hidden;">
+                                                {{ post.body|truncatechars:25 }}
+											</p>
+											<ul class="post-mate-time left">
+												<li>
+													<p class="hero left">
+														By - <a href="#" class="l-blue">{{ post.author }}</a>
+													</p>
+												</li>
+												<li>
+													<i class="icofont icofont-ui-calendar"></i> {{ post.created_time }}
+												</li>
+											</ul>
+
+											<ul class="post-mate right">
+												<li class="like">
+													<a href="#">
+														<i class="icofont icofont-heart-alt"></i> {{ post.views }}
+													</a>
+												</li>
+												<li class="comment">
+													<a href="#">
+														<i class="icofont icofont-comment"></i> {{ post.comment_set.count }}
+													</a>
+												</li>
+											</ul>
+										</div>
+										<!-- /.card-content -->
+									</div>
+									<!-- /.card -->
+								</div>
+								<!-- /.blogs -->
+
+							</div>
+							<!-- colm6 -->
+
+                            {% empty %}
+								 <div style="font-size:16px;" class="comment w100dt mb-30"><center>暂无博客！</center></div>
+
+                            {% endfor %}
+
+
+						</div>
+						<!-- row -->
+
+						{% if is_paginated %}
+
+                    		<div class="pagination w100dt">
+
+                        {% if first %}
+                            <div class="waves-effect"><a href="?page=1">1</a></div>
+                        {% endif %}
+
+                        {% if left %}
+                            {% if left_has_more %}
+                                <span>...</span>
+                            {% endif %}
+                            {% for i in left %}
+                                <div class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></div>
+                            {% endfor %}
+                        {% endif %}
+
+<!--                            <a href="?page={{ page_obj.number }}" style="color: red">{{ page_obj.number }}</a>-->
+                            <div class="waves-effect active"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></div>
+
+                        {% if right %}
+                            {% for i in right %}
+<!--                                <a href="?page={{ i }}">{{ i }}</a>-->
+                                <div class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></div>
+                            {% endfor %}
+                            {% if right_has_more %}
+                                <span>...</span>
+                            {% endif %}
+                        {% endif %}
+
+                          {% if last %}
+<!--                            <a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>-->
+                              <div class="waves-effect"><a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></div>
+
+                          {% endif %}
+
+                    </div>
+
+                		{% endif %}
+
+					</div>
+        <!-- colm8 -->
+
+    {% endblock div_post %}
