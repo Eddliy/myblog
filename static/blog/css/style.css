@@ -1191,7 +1191,11 @@ div.pagination div:hover a {
 }
 .top-post .hot-post .hot-post-image img {
   width: 100%;
+<<<<<<< HEAD
   height: 50%;
+=======
+  height: 100%;
+>>>>>>> c3a034097dd1421d1d30feae5ffb5f851c2e5072
   display: block;
 }
 

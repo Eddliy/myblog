@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bfdfce1-197c-4415-9552-bcfd1a8a7e15" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/static/blog/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog/static/blog/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templatetags/blog_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templatetags/blog_tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_category/images/111412106_复件.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_category/images/1321913106_jU7q5YA.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_category/images/1513666105.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_category/images/237832106.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_category/images/473641106.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_category/images/473641106_3Datvtf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_category/images/76334106.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_post/images/278187106.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/my_post/images/522980106.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/blog/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/blog/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,11 +191,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49849397" visible="true" weight="0.116033755" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49849397" visible="true" weight="0.116033755" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.50150603" side_tool="true" weight="0.121308014" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -200,9 +202,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.3294979" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.12696747" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32948583" />
+      <window_info anchor="bottom" id="Favorites" order="8" sideWeight="0.50150603" weight="0.12067156" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3294979" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.41238195" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32948583" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
