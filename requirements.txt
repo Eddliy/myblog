@@ -1,6 +1,8 @@
 Django==2.2.1
 django-appconf==1.0.3
+django-ckeditor==5.7.1
 django-imagekit==4.0.2
+django-js-asset==1.2.2
 gunicorn==19.9.0
 Markdown==3.1
 mysqlclient==1.4.2.post1
