@@ -148,12 +148,12 @@
 
                             <div class="sidebar-posts">
 
-                                {% get_most_view_post as fpost_list %}
+                                {% get_featured_post as fpost_list %}
                                 {% for fpost in fpost_list %}
 
                                     <div class="card">
                                         <div class="card-image mb-10">
-                                            <img src="{% static 'blog/img/blog3.jpg' %}" alt="Image">
+                                            <img src="{{ fpost.picture.url }}" alt="Image">
                                             <span class="effect"></span>
                                         </div>
                                         <!-- /.card-image -->
@@ -217,7 +217,7 @@
                                         <div class="card-panel grey lighten-5 z-depth-1">
                                             <div class="row valign-wrapper">
                                                 <div class="col s3">
-                                                    <img src="{% static 'blog/img/img1.png' %}" alt="Image" class="circle responsive-img"> <!-- notice the "circle" class -->
+                                                    <img src="{% static 'blog/img/timg.jpeg' %}" alt="Image" class="circle responsive-img"> <!-- notice the "circle" class -->
                                                 </div>
                                                 <div class="col s9">
                                                     <span class="black-text">
@@ -259,10 +259,12 @@
                                     {% get_most_view_post as most_post_list %}
                                     {% for most_post in most_post_list %}
 
-                                        <div class="hot-post w100dt mb-10">
+                                        <div class="hot-post w100dt" style="padding:0 10px;">
                                             <div class="hot-post-image">
-                                                <img src="{% static 'blog/img/img3.jpg' %}" alt="Image">
-                                                <span class="effect"></span>
+                                                <div style="padding-bottom:100%;">
+                                                    <img src="{{ most_post.picture.url }}" alt="Image" style="position:absolute;top:16px;bottom:0;left:0;right:0;width:100%;margin:1px;">
+                                                    <span class="effect"></span>
+                                                </div>
                                             </div>
                                             <!-- /.hot-post-image -->
                                             <div class="hot-post-stacked">
@@ -308,10 +310,12 @@
                                 {% get_recent_posts as recent_post_list %}
                                 {% for rencent_post in recent_post_list %}
 
-                                    <div class="hot-post w100dt p-15">
+                                    <div class="hot-post w100dt" style="padding:0 15px 0 15px;">
                                         <div class="hot-post-image">
-                                            <img src="{% static 'blog/img/img3.jpg' %}" alt="Image">
+                                            <div style="padding-bottom:100%;">
+                                            <img src="{{ rencent_post.picture.url }}" alt="Image" style="position:absolute;top:16px;bottom:0;left:0;right:0;width:100%;margin:1px;">
                                             <span class="effect"></span>
+                                            </div>
                                         </div>
                                         <!-- /.hot-post-image -->
                                         <div class="hot-post-stacked">
@@ -356,7 +360,7 @@
                                         <div class="row valign-wrapper">
                                             <div style="width:100%;height:auto;word-wrap:break-word;word-break:break-all;overflow:hidden;">
                                                 <div class="col s3">
-                                                    <img src="{% static 'blog/img/img1.png' %}" alt="Image" class="circle responsive-img"> <!-- notice the "circle" class -->
+                                                    <img src="{% static 'blog/img/comments2.jpg' %}" alt="Image" class="circle responsive-img"> <!-- notice the "circle" class -->
                                                 </div>
                                                 <div class="col s9">
                                                     <span class="black-text">
@@ -399,7 +403,7 @@
 							<div style="padding: 25px;overflow: hidden;" class="w100dt">
                                 {% get_tags as tag_list %}
                                 {% for tag in tag_list %}
-                                    <a style="font-size:17px;display:inline-block;padding: 5px 10px;margin-right: 10px;color:gray;letter-spacing:1px;border:1px solid #2962ff;margin-bottom:8px;" href="{% url 'blog:tag' tag.pk %}">#{{ tag.name }}</a>
+                                    <a style="font-size:17px;display:inline-block;padding: 5px 10px;margin-right: 10px;color:gray;letter-spacing:1px;border:1px solid #2962ff;margin-bottom:8px;" href="{% url 'blog:tag' tag.pk %}"><i style="color:#EAC100;">★</i>{{ tag.name }}</a>
                                 {% empty %}
                                     <a style="font-size:17px;display:inline-block;padding: 5px 10px;margin-right: 10px;color:gray;letter-spacing:1px;border:1px solid #2962ff;margin-bottom:8px;" href="#">#暂无标签</a>
                                 {% endfor %}

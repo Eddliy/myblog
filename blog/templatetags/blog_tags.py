@@ -38,5 +38,11 @@ def get_recent_comments(num=6):
 
 
 @register.simple_tag
-def get_most_view_post(num=3):
+def get_most_view_post(num=4):
     return Post.objects.all().order_by('-views')[:num]
+
+
+@register.simple_tag
+def get_featured_post(num=3):
+    return Post.objects.all().order_by('-views')[:num]
+
