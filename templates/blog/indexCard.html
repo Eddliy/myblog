@@ -76,7 +76,8 @@
                         <div class="item">
                             <div class="card horizontal">
                                 <div class="card-image">
-                                    <img src="{% static 'blog/img/img1.jpg' %}" alt="Image">
+<!--                                    <img src="{% static 'blog/img/img1.jpg' %}" alt="Image">-->
+                                        <img src="{{ category.picture.url }}" alt="Image" style="top:12px;left: 2px;">
                                     <span class="effect"></span>
                                 </div>
                                 <!-- /.card-image -->
@@ -88,7 +89,7 @@
                                     <!-- /.card-content -->
                                     <div class="card-action">
                                         <p class="hero left">
-                                            BY - <a href="#" class="l-blue">Eddie</a>
+                                            BY - <a href="{% url 'blog:about' %}" class="l-blue">Eddie</a>
                                         </p>
                                         <ul class="post-mate right">
                                             <li>
