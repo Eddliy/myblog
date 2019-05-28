@@ -21,6 +21,10 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/responsive.css' %}">
 
+        <!-- 富文本编辑器专用css样式 -->
+        <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'blog/css/prism.css' %}">
+
         <!-- my css highlight style -->
         <link rel="stylesheet" href="{% static 'blog/css/highlights/vim.css' %}">
 
@@ -521,6 +525,8 @@
 		<script type="text/javascript">
 		</script>
 
+    {% block script %}
+    {% endblock script %}
 
 	</body>
 

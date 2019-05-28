@@ -37,81 +37,81 @@
 
 
 
-                    {% block div_post %}
+{% block div_post %}
 
-					    <div class="col m8 s12">
+	<div class="col m8 s12">
 
-						<div class="blogs mb-30">
-							<div class="card">
-								<div class="card-image">
+	<div class="blogs mb-30">
+		<div class="card">
+			<div class="card-image">
 <!--									<img src="{% static 'blog/img/selfie.jpg' %}" alt="Image">-->
-										<img src="{{ post.picture.url }}" alt="Image">
-								</div>
-								<!-- /.card-image -->
-								<div class="card-content w100dt">
-									<p>
+					<img src="{{ post.picture.url }}" alt="Image">
+			</div>
+			<!-- /.card-image -->
+			<div class="card-content w100dt">
+				<p>
 <!--										<a href="" class="tag left w100dt l-blue mb-30">{{ post.category.name }}</a>-->
-										<a href="{% url 'blog:category' post.category.pk %}" class="tag left w100dt l-blue mb-30">{{ post.category.name }}</a>
-									</p>
-									<a href="" class="card-title mb-30">
-										{{ post.title }}
-									</a>
-									<p class="mb-30">
-                                        <!--{{ post.excerpt }}-->
-									</p>
-									<ul class="post-mate-time left mb-30">
-										<li>
-											<p class="hero left">
-												By - <a href="{% url 'blog:about' %}" class="l-blue">{{ post.author }}</a>
-											</p>
-										</li>
-										<li>
-											<i class="icofont icofont-ui-calendar"></i> {{ post.created_time }}
-										</li>
-									</ul>
+					<a href="{% url 'blog:category' post.category.pk %}" class="tag left w100dt l-blue mb-30">{{ post.category.name }}</a>
+				</p>
+				<a href="" class="card-title mb-30">
+					{{ post.title }}
+				</a>
+				<p class="mb-30">
+					<!--{{ post.excerpt }}-->
+				</p>
+				<ul class="post-mate-time left mb-30">
+					<li>
+						<p class="hero left">
+							By - <a href="{% url 'blog:about' %}" class="l-blue">{{ post.author }}</a>
+						</p>
+					</li>
+					<li>
+						<i class="icofont icofont-ui-calendar"></i> {{ post.created_time }}
+					</li>
+				</ul>
 
-									<ul class="post-mate right mb-30">
-										<li class="like">
-											<a href="#">
-												<i class="icofont icofont-heart-alt"></i> {{ post.views }}
-											</a>
-										</li>
-										<li class="comment">
-											<a href="#">
-												<i class="icofont icofont-comment"></i> {{ post.comment_set.count }}
-											</a>
-										</li>
-									</ul>
+				<ul class="post-mate right mb-30">
+					<li class="like">
+						<a href="#">
+							<i class="icofont icofont-heart-alt"></i> {{ post.views }}
+						</a>
+					</li>
+					<li class="comment">
+						<a href="#">
+							<i class="icofont icofont-comment"></i> {{ post.comment_set.count }}
+						</a>
+					</li>
+				</ul>
 
-									<div class="w100dt mb-50">
+				<div class="w100dt mb-50">
 
-                                        <div style="height:auto;word-wrap:break-word;word-break:break-all;overflow:hidden;">
-                                            {{ post.body|safe }}
-                                        </div>
+					<div style="height:auto;word-wrap:break-word;word-break:break-all;overflow:hidden;">
+						{{ post.body|safe }}
+					</div>
 
-                                    </div>
+				</div>
 
-									<ul class="tag-list left">
-										{% for tag in post.tags.all %}
-										<li><a href="{% url 'blog:tag' tag.pk %}" class="waves-effect">#{{ tag.name }}</a></li>
-										{% endfor %}
-									</ul>
+				<ul class="tag-list left">
+					{% for tag in post.tags.all %}
+					<li><a href="{% url 'blog:tag' tag.pk %}" class="waves-effect">#{{ tag.name }}</a></li>
+					{% endfor %}
+				</ul>
 
-									<ul class="share-links right">
-										<li><a href="#" class="facebook"><i class="icofont icofont-social-facebook"></i></a></li>
-										<li><a href="#" class="twitter"><i class="icofont icofont-social-twitter"></i></a></li>
-										<li><a href="#" class="google-plus"><i class="icofont icofont-social-google-plus"></i></a></li>
-										<li><a href="#" class="linkedin"><i class="icofont icofont-brand-linkedin"></i></a></li>
-										<li><a href="#" class="pinterest"><i class="icofont icofont-social-pinterest"></i></a></li>
-										<li><a href="#" class="instagram"><i class="icofont icofont-social-instagram"></i></a></li>
-									</ul>
+				<ul class="share-links right">
+					<li><a href="#" class="facebook"><i class="icofont icofont-social-facebook"></i></a></li>
+					<li><a href="#" class="twitter"><i class="icofont icofont-social-twitter"></i></a></li>
+					<li><a href="#" class="google-plus"><i class="icofont icofont-social-google-plus"></i></a></li>
+					<li><a href="#" class="linkedin"><i class="icofont icofont-brand-linkedin"></i></a></li>
+					<li><a href="#" class="pinterest"><i class="icofont icofont-social-pinterest"></i></a></li>
+					<li><a href="#" class="instagram"><i class="icofont icofont-social-instagram"></i></a></li>
+				</ul>
 
-								</div>
-								<!-- /.card-content -->
-							</div>
-							<!-- /.card -->
-						</div>
-						<!-- /.blogs -->
+			</div>
+			<!-- /.card-content -->
+		</div>
+		<!-- /.card -->
+	</div>
+	<!-- /.blogs -->
 
 <!--						<div class="prv-nxt-post w100dt mb-30">-->
 
@@ -150,33 +150,33 @@
 
 <!--						</div>-->
 
-						<div class="peoples-comments w100dt mb-30">
-							<div class="sidebar-title center-align">
-								<h2>{{ post.comment_set.count }} Comments</h2>
-							</div>
+	<div class="peoples-comments w100dt mb-30">
+		<div class="sidebar-title center-align">
+			<h2>{{ post.comment_set.count }} Comments</h2>
+		</div>
 
-							<div class="comment-area w100dt">
+		<div class="comment-area w100dt">
 
 
-                                {% for comment in comment_list %}
-								<div class="comment w100dt mb-30">
-										<div class="ppic left">
-											<img src="{% static 'blog/img/comments.jpg' %}" alt="Image">
-										</div>
-										<!-- /.ppic -->
-										<div class="pname">
-											<h4 class="mb-10">
-												<a href="#" class="card-title l-blue">
-													{{ comment.name }}
-												</a>
-											</h4>
-                                            <div style="height:auto;word-wrap:break-word;word-break:break-all;overflow:hidden;">
-                                                <p class="comment-text mb-10">
-                                                    {{ comment.text }}
-                                                </p>
-                                            </div>
+			{% for comment in comment_list %}
+			<div class="comment w100dt mb-30">
+					<div class="ppic left">
+						<img src="{% static 'blog/img/comments.jpg' %}" alt="Image">
+					</div>
+					<!-- /.ppic -->
+					<div class="pname">
+						<h4 class="mb-10">
+							<a href="#" class="card-title l-blue">
+								{{ comment.name }}
+							</a>
+						</h4>
+						<div style="height:auto;word-wrap:break-word;word-break:break-all;overflow:hidden;">
+							<p class="comment-text mb-10">
+								{{ comment.text|safe }}
+							</p>
+						</div>
 
-											<ul class="post-mate-time right">
+						<ul class="post-mate-time right">
 <!--												<li class="like">-->
 <!--													<a href="#">-->
 <!--														<i class="icofont icofont-heart-alt"></i> 55-->
@@ -187,85 +187,92 @@
 <!--														<i class="icofont icofont-comment"></i> 32-->
 <!--													</a>-->
 <!--												</li>-->
-												<li class="reply">
-													<a href="#lalala" style="font-weight:bold;color:black;">
-														Reply
-													</a>
-												</li>
-												<li>
-													<i class="icofont icofont-ui-calendar"></i> {{ comment.created_time }}
-												</li>
-											</ul>
+							<li class="reply">
+								<a href="#lalala" style="font-weight:bold;color:black;">
+									Reply
+								</a>
+							</li>
+							<li>
+								<i class="icofont icofont-ui-calendar"></i> {{ comment.created_time }}
+							</li>
+						</ul>
 
-										</div>
-										<!-- /.pname -->
-									</div>
-									<!-- /.comment -->
-                                {% empty %}
-                                <div style="font-size:16px;" class="comment w100dt mb-30"><center>暂无评论！</center></div>
-                                {% endfor %}
+					</div>
+					<!-- /.pname -->
+				</div>
+				<!-- /.comment -->
+			{% empty %}
+			<div style="font-size:16px;" class="comment w100dt mb-30"><center>暂无评论！</center></div>
+			{% endfor %}
 
-							</div>
-							<!-- /.comment-area -->
+		</div>
+		<!-- /.comment-area -->
+	</div>
+	<!-- /.peoples-comments -->
+
+	<div class="leave-comment" id="lalala">
+
+		<div class="sidebar-title center-align">
+			<h2>Leave Your Comment</h2>
+		</div>
+
+		<form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-area w100dt">
+			{% csrf_token %}
+			<div class="row">
+				<div class="col m6 s12">
+					<div class="form-item">
+
+						{{ form.name }}
+						{{ form.name.errors }}
+						<label for="{{ form.name.id_for_label }}">Your Name</label>
+
+					</div>
+				</div>
+				<div class="col m6 s12">
+					<div class="form-item">
+
+						{{ form.email }}
+						{{ form.email.errors }}
+						<label for="{{ form.email.id_for_label }}" data-error="wrong" data-success="right">Email</label>
+
+					</div>
+				</div>
+				<div class="col s12">
+					<div class="form-item">
+
+							{{ form.media }}
+							{{ form.text }}
+							{{ form.text.errors }}
+
+							<!--<textarea id="{{ form.text.id_for_label }}" class="materialize-textarea" style="height: 23.7383px;"></textarea>-->
+							<label for="{{ form.text.id_for_label }}"></label>
+
 						</div>
-						<!-- /.peoples-comments -->
+					</div>
+				</div>
+			<!-- row -->
+			<button type="submit" class="custom-btn waves-effect waves-light right">SUBMIT NOW</button>
+			<!--<button type="button" class="custom-btn waves-effect waves-light right">SUBMIT NOW</button>-->
 
-						<div class="leave-comment">
+		</form>
 
-							<div class="sidebar-title center-align" id="lalala">
-								<h2>Leave Your Comment</h2>
-							</div>
+		<!-- /.comment-area -->
+	</div>
+	<!-- /.leave-comment -->
 
-							<form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-area w100dt">
-								{% csrf_token %}
-								<div class="row">
-									<div class="col m6 s12">
-										<div class="form-item">
+</div>
+	<!-- colm8 -->
 
-                                            {{ form.name }}
-                                            {{ form.name.errors }}
-											<label for="{{ form.name.id_for_label }}">Your Name</label>
-
-										</div>
-									</div>
-									<div class="col m6 s12">
-										<div class="form-item">
-
-                                            {{ form.email }}
-                                            {{ form.email.errors }}
-											<label for="{{ form.email.id_for_label }}" data-error="wrong" data-success="right">Email</label>
-
-										</div>
-									</div>
-									<div class="col s12">
-										<div class="form-item">
-
-                                                {{ form.text }}
-                                                {{ form.text.errors }}
-
-                                                <!--<textarea id="{{ form.text.id_for_label }}" class="materialize-textarea" style="height: 23.7383px;"></textarea>-->
-                                                <label for="{{ form.text.id_for_label }}"></label>
-
-                                            </div>
-										</div>
-									</div>
-								<!-- row -->
-								<button type="submit" class="custom-btn waves-effect waves-light right">SUBMIT NOW</button>
-                                <!--<button type="button" class="custom-btn waves-effect waves-light right">SUBMIT NOW</button>-->
-
-							</form>
-
-							<!-- /.comment-area -->
-						</div>
-						<!-- /.leave-comment -->
-
-					</div>	
-					    <!-- colm8 -->
-
-                    {% endblock div_post %}
+{% endblock div_post %}
 
 
 
+
+{% block script %}
+<script>
+    $(".django-ckeditor-widget").removeAttr('style');
+</script>
+{% endblock script %}
 
 
 
