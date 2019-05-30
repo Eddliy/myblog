@@ -25,6 +25,9 @@
         <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
         <link rel="stylesheet" href="{% static 'blog/css/prism.css' %}">
 
+        <!-- 引入矢量图标 -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
         <!-- my css highlight style -->
         <link rel="stylesheet" href="{% static 'blog/css/highlights/vim.css' %}">
 
@@ -179,12 +182,12 @@
                                             <ul class="post-mate right">
                                                 <li class="like">
                                                     <a href="#">
-                                                        <i class="icofont icofont-heart-alt"></i> {{ fpost.views }}
+                                                        <i class="fas fa-eye" style="color: #5c7cfa;"></i> {{ fpost.views }}
                                                     </a>
                                                 </li>
                                                 <li class="comment">
                                                     <a href="#">
-                                                        <i class="icofont icofont-comment"></i> {{ fpost.comment_set.count }}
+                                                        <i class="icofont icofont-comment" style="color: yellowgreen;"></i> {{ fpost.comment_set.count }}
                                                     </a>
                                                 </li>
                                             </ul>
@@ -283,8 +286,7 @@
                                                     <ul class="post-mate right">
                                                         <li class="comment">
                                                             <a href="#">
-                                                                <!--<i class="icofont icofont-comment"></i> {{ post.comment_set.count }}-->
-                                                                <i class="icofont icofont-heart-alt"></i> {{ most_post.views }}
+                                                                <i class="fas fa-eye" style="color: #5c7cfa;"></i> {{ most_post.views }}
                                                             </a>
                                                         </li>
                                                     </ul>
@@ -335,7 +337,7 @@
                                                 <ul class="post-mate right">
                                                     <li class="comment">
                                                         <a href="#">
-                                                            <i class="icofont icofont-comment"></i> {{ rencent_post.comment_set.count }}
+                                                            <i class="icofont icofont-comment" style="color: yellowgreen;"></i> {{ rencent_post.comment_set.count }}
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -407,7 +409,7 @@
 							<div style="padding: 25px;overflow: hidden;" class="w100dt">
                                 {% get_tags as tag_list %}
                                 {% for tag in tag_list %}
-                                    <a style="font-size:17px;display:inline-block;padding: 5px 10px;margin-right: 10px;color:gray;letter-spacing:1px;border:1px solid #2962ff;margin-bottom:8px;" href="{% url 'blog:tag' tag.pk %}"><i style="color:#EAC100;">★</i>{{ tag.name }}</a>
+                                    <a style="font-size:17px;display:inline-block;padding: 5px 10px;margin-right: 10px;color:gray;letter-spacing:1px;border:1px solid #2962ff;margin-bottom:8px;" href="{% url 'blog:tag' tag.pk %}"><i class="fas fa-tags"></i>{{ tag.name }}</a>
                                 {% empty %}
                                     <a style="font-size:17px;display:inline-block;padding: 5px 10px;margin-right: 10px;color:gray;letter-spacing:1px;border:1px solid #2962ff;margin-bottom:8px;" href="#">#暂无标签</a>
                                 {% endfor %}

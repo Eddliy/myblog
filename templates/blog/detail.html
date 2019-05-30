@@ -73,12 +73,14 @@
 				<ul class="post-mate right mb-30">
 					<li class="like">
 						<a href="#">
-							<i class="icofont icofont-heart-alt"></i> {{ post.views }}
+<!--							<i class="icofont icofont-heart-alt"></i> {{ post.views }}-->
+							<i class="fas fa-eye" style="color: #5c7cfa;"></i> {{ post.views }}
+
 						</a>
 					</li>
 					<li class="comment">
 						<a href="#">
-							<i class="icofont icofont-comment"></i> {{ post.comment_set.count }}
+							<i class="icofont icofont-comment" style="color: yellowgreen;"></i> {{ post.comment_set.count }}
 						</a>
 					</li>
 				</ul>
@@ -162,6 +164,7 @@
 			<div class="comment w100dt mb-30">
 					<div class="ppic left">
 						<img src="{% static 'blog/img/comments.jpg' %}" alt="Image">
+<!--						<i class="fas fa-paw"></i>-->
 					</div>
 					<!-- /.ppic -->
 					<div class="pname">
