@@ -23,7 +23,7 @@
 									{{ post.title }}
 								</h1>
 								<p style="height:auto;word-wrap:break-word;word-break:break-all;overflow:hidden;">
-									{{ post.body|truncatechars:25 }}
+									{{ post.body|truncatechars:25 }}<b> . . .</b>
 								</p>
 								<a href="{{ post.get_absolute_url }}" class="custom-btn waves-effect waves-light">READ MORE</a>
 							</div>
@@ -136,7 +136,7 @@
                         </a>
                         <p class="mb-30">
                             <!--{{ post.excerpt }}-->
-                            {{ post.body|truncatechars:25 }}
+                            {{ post.body|truncatechars:25 }}<b> . . .</b>
                         </p>
                         <ul class="post-mate-time left">
                             <li>
