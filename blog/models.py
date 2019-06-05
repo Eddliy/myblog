@@ -14,7 +14,7 @@ class Category(models.Model):
     picture = ProcessedImageField(
         upload_to='my_category/images',
         default='/my_post/images/selfie.jpg',
-        processors=[ResizeToFit(200, 113)],
+        processors=[ResizeToFit(170, 150)],
         format='JPEG',
         options={'quality': 100},
         blank=True,
@@ -44,7 +44,7 @@ class Post(models.Model):
     picture = ProcessedImageField(
         upload_to='my_post/images',
         default='/my_post/images/selfie.jpg',
-        processors=[ResizeToFit(1600, 900)],
+        processors=[ResizeToFit(1280, 720)],
         format='JPEG',
         options={'quality': 100},
         blank=True,
